@@ -44,6 +44,14 @@
                 <label for="credit-card">Kredittkortnummer</label>
                 <input type="text" id="credit-card" name="credit-card" placeholder="Skriv inn kredittkortnummer" pattern="\d{16}" required aria-required="true" maxlength="16">
 
+                <!-- Utløpsdato -->
+                <label for="expiry-date">Utløpsdato</label>
+                <input type="month" id="expiry-date" name="expiry-date" required aria-required="true">
+
+                <!-- CVC/CVV -->
+                <label for="cvc">CVC/CVV</label>
+                <input type="text" id="cvc" name="cvc" placeholder="123" pattern="\d{3}" required aria-required="true" maxlength="3">
+
                 <!-- Fullfør kjøp knappen -->
                 <button type="submit" class="btn-submit">Fullfør kjøp</button>
             </fieldset>
@@ -69,13 +77,23 @@
 
     <!-- Skript for interaktivitet (handlekurv, validasjon, osv.) -->
     <script>
-        // Eksempel på enkel validasjon av kredittkortnummer (utvid etter behov)
+        // Validasjon for kredittkortnummer
         const creditCardInput = document.getElementById('credit-card');
         creditCardInput.addEventListener('input', function() {
             if (creditCardInput.value.length === 16) {
                 creditCardInput.setCustomValidity('');
             } else {
                 creditCardInput.setCustomValidity('Kredittkortnummer må være 16 sifre.');
+            }
+        });
+
+        // Validasjon for CVC/CVV
+        const cvcInput = document.getElementById('cvc');
+        cvcInput.addEventListener('input', function() {
+            if (/^\d{3}$/.test(cvcInput.value)) {
+                cvcInput.setCustomValidity('');
+            } else {
+                cvcInput.setCustomValidity('CVC/CVV må være 3 sifre.');
             }
         });
     </script>
