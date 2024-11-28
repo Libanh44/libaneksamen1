@@ -1,85 +1,134 @@
-/* Grunnleggende styling */
-body {
-    font-family: Arial, sans-serif;
+/* Global reset for å fjerne standardmarginer og padding */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Header */
-header {
-    background-color: #0078d7;
+/* Generelle stiler for hele nettsiden */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 50px; /* For å gi plass til headeren */
+}
+
+/* Linker */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Knappestil */
+button {
+    cursor: pointer;
+    background-color: #FF6F61; /* Lys korallfarge */
     color: white;
-    padding: 15px 20px;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #D84B3B; /* Mørkere korallfarge ved hover */
+    transform: scale(1.05); /* Skalerer knappen litt ved hover */
+}
+
+/* Header-stil */
+header {
+    background-color: #007BFF; /* Lyseblå bakgrunnsfarge */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto;
+    position: static; /* Fjerner fast posisjon */
+    z-index: 1000;
+}
+
+/* Logo-stil */
+header .logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-header .logo {
-    font-size: 24px;
+    justify-content: center;
+    font-size: 28px;
     font-weight: bold;
-    text-decoration: none;
-    color: white;
+    color: #fff; /* Hvit tekst for logoen */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 15px;
 }
 
+header .logo img {
+    height: 50px; /* Større logo */
+    max-width: 100%;
+    margin-right: 10px;
+}
+
+/* Navigasjon */
 header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    list-style: none;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+header nav a {
+    color: #fff; /* Hvit farge på navigasjonslinkene */
+    font-size: 18px;
     transition: color 0.3s;
 }
 
-header nav ul li a:hover {
-    color: #ffcc00;
+header nav a:hover {
+    color: #FF6F61; /* Korallfarge ved hover */
 }
 
-header .cart-icon {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    margin-right: 20px;
-}
-
-header .search-bar {
+/* Søkeboks og handlekurv */
+header .search-cart {
     display: flex;
-    gap: 5px;
+    gap: 15px;
+    align-items: center;
 }
 
-header .search-bar input {
-    padding: 5px;
+header .search-cart input {
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    width: 200px;
 }
 
-header .search-bar button {
-    background-color: #ffcc00;
-    border: none;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+header .search-cart img {
+    width: 24px;
+    height: 24px;
 }
 
-header .search-bar button:hover {
-    background-color: #e0b800;
+/* Responsiv justering for mobilskjermer */
+@media (max-width: 768px) {
+    header .search-cart input {
+        width: 150px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 40px; /* Juster logoen for mobil */
+    }
 }
 
-/* Banner */
+/* Banner Seksjon */
 #banner {
-    background-color: #0078d7;
+    background: linear-gradient(45deg, #FF6F61, #FFD700); /* Gradient bakgrunn */
     color: white;
     text-align: center;
     padding: 50px 20px;
+    margin-top: 80px;
 }
 
 #banner h1 {
@@ -88,116 +137,162 @@ header .search-bar button:hover {
 }
 
 #banner p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
-#banner .button {
-    text-decoration: none;
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 20px;
+#banner .btn {
+    background-color: #fff;
+    color: #FF6F61; /* Korallfarge */
+    padding: 12px 30px;
     border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#banner .button:hover {
-    background-color: #e0b800;
+#banner .btn:hover {
+    background-color: #FF6F61; /* Bakgrunn blir korallfarget */
+    color: #fff; /* Tekst blir hvit */
 }
 
-/* Seksjoner */
-section {
-    padding: 40px 20px;
+/* Produkter Seksjon */
+#popular-products {
+    padding: 60px 20px;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
-section h2 {
-    font-size: 28px;
+#popular-products h2 {
+    font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* Produkter */
-.product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
+/* Produktkort */
 .product-card {
+    display: inline-block;
+    width: 30%;
+    margin: 15px 1%;
     background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Hever kortet ved hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.05); /* Zoom på bilde ved hover */
 }
 
 .product-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .product-card p {
     font-size: 16px;
-    color: #0078d7;
+    color: #666;
+    margin-bottom: 15px;
 }
 
-/* Kategorier */
-.category-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Produktbilde - standard størrelse (25% bredde) */
+.product-image img {
+    width: 25%; /* Sett bildet til å ta 25% av bredden */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-.category-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: 150px;
+/* Responsiv design for små skjermer */
+@media (max-width: 768px) {
+    .product-image img {
+        width: 100%; /* På mobil, sett bildet til 100% av bredden */
+    }
+
+    .product-card {
+        width: 45%; /* Øk bredden på produktkortene på mobil */
+    }
+
+    header .search-cart input {
+        width: 150px; /* Reduserer bredden på søkeboksen på mobil */
+    }
+}
+
+/* Kategorier Seksjon */
+#popular-categories {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
     text-align: center;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+}
+
+#popular-categories h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Kategorikort */
+.category-card {
+    display: inline-block;
+    width: 30%;
+    margin: 15px 1%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .category-card:hover {
-    background-color: #0078d7;
-    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
+.category-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Kontakt Seksjon */
+#contact {
+    padding: 40px 20px;
+    background-color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
 }
 
-footer h3 {
+#contact h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact p {
     font-size: 18px;
-    margin-bottom: 10px;
+    color: #666;
 }
-
-footer p {
-    font-size: 14px;
-    margin: 5px 0;
-}
-

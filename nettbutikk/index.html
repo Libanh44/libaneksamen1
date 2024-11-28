@@ -3,63 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mitt Nettbutikk</title>
+    <title>Min Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Globalt Header -->
     <header>
-        <a href="index.html" class="logo">Logo</a>
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="product.html">Produkter</a></li>
-                <li><a href="#populaere-kategorier">Kategorier</a></li>
+                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Kategorier</a></li>
                 <li><a href="#footer">Kontakt oss</a></li>
             </ul>
         </nav>
-        <a href="checkout.html" class="cart-icon">🛒</a>
-        <div class="search-bar">
+        <a href="index.html" class="logo">Logo</a>
+        <form action="#" class="search-cart">
             <input type="text" placeholder="Søk...">
-            <button>Søk</button>
-        </div>
+            <a href="checkout.html">
+                <img src="cart-icon.png" alt="Shoppingvogn">
+                <span id="cart-count">0</span>
+            </a>
+        </form>
     </header>
+
     <main>
+        <!-- Bannerseksjon -->
         <section id="banner">
-            <h1>Velkommen til forsiden</h1>
-            <p>beste produktene til de beste prisene</p>
-            <a href="#populaere-produkter" class="button">Utforsk nå</a>
+            <h1>Velkommen til vår nettbutikk!</h1>
+            <p>Oppdag de beste produktene til de beste prisene.</p>
+            <a href="#popular-products" class="btn">Utforsk produkter</a>
         </section>
-        <section id="populaere-produkter">
-            <h2> vår meste populære produkter</h2>
-            <div class="product-list">
-                <article class="product-card">
-                    <img src="https://picsum.photos/150" alt="Produkt">
-                    <h3>Produkt 1</h3>
-                    <p>Pris: 399,-</p>
-                </article>
-                <article class="product-card">
-                    <img src="https://picsum.photos/150" alt="Produkt">
-                    <h3>Produkt 2</h3>
-                    <p>Pris: 599,-</p>
-                </article>
-            </div>
+
+        <!-- Våre mest populære produkter -->
+        <section id="popular-products">
+            <h2>Våre mest populære produkter</h2>
+            <article class="product-card">
+                <img src="https://picsum.photos/200/300" alt="Produkt 1">
+                <h3>Produkt 1</h3>
+                <p>Pris: 599 NOK</p>
+                <button onclick="addToCart('Produkt 1')">Legg i handlekurv</button>
+            </article>
+            <article class="product-card">
+                <img src="https://picsum.photos/200/300" alt="Produkt 2">
+                <h3>Produkt 2</h3>
+                <p>Pris: 199 NOK</p>
+                <button onclick="addToCart('Produkt 2')">Legg i handlekurv</button>
+            </article>
+            <article class="product-card">
+                <img src="https://picsum.photos/200/300" alt="Produkt 3">
+                <h3>Produkt 3</h3>
+                <p>Pris: 755 NOK</p>
+                <button onclick="addToCart('Produkt 3')">Legg i handlekurv</button>
+            </article>
+            <article class="product-card">
+                <img src="https://picsum.photos/200/300" alt="Produkt 4">
+                <h3>Produkt 4</h3>
+                <p>Pris: 249 NOK</p>
+                <button onclick="addToCart('Produkt 4')">Legg i handlekurv</button>
+            </article>
         </section>
-        <section id="populaere-kategorier">
-            <h2>  populære kategorier</h2>
-            <div class="category-list">
-                <div class="category-card">Kategori 1</div>
-                <div class="category-card">Kategori 2</div>
-            </div>
+
+        <!-- Våre mest populære kategorier -->
+        <section id="popular-categories">
+            <h2>Våre mest populære kategorier</h2>
+            <article class="category-card">
+                <h3>Kategori 1</h3>
+            </article>
+            <article class="category-card">
+                <h3>Kategori 2</h3>
+            </article>
         </section>
-    </main>
-    <footer id="footer">
-        <h3>Kontakt oss</h3>
-        <p>E-post: libanah@gmail.com</p>
-        <p>Telefon: 40159159</p>
-    </footer>
+
+        <footer id="footer">
+            <section>
+                <h3>Kontakt oss</h3>
+                <p>E-post: libanah@gmail.com</p>
+                <p>Telefon: 40159159</p>
+            </section>
+            <section>
+                <h3>Snarveier</h3>
+                <ul>
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="#populaere-produkter">Produkter</a></li>
+                    <li><a href="#populaere-kategorier">Kategorier</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>Sosiale medier</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com">Instagram</a></li>
+                    <li><a href="https://www.facebook.com">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                    <li><a href="https://www.pinterest.com">Pinterest</a></li>
+                </ul>
+            </section>
+        </footer>
+</main>
 </body>
 </html>
-
-
-
-

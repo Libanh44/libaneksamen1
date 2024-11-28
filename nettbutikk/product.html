@@ -3,70 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Våre mest populære produkter. Se vårt utvalg av klær, sko, og tilbehør.">
-    <title>Produkter</title>
+    <meta name="description" content="Se vårt brede utvalg av produkter, fra elektronikk til klær. Bestill i dag!">
+    <title>Produkt - Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header -->
+    <!-- Globalt Header -->
     <header>
         <nav>
-            <a href="index.html" class="logo">Min Nettbutikk</a>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="product.html" class="active">Produkter</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="#omoss">Om oss</a></li>
+                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Kategorier</a></li>
+                <li><a href="#contact">Kontakt oss</a></li>
             </ul>
         </nav>
+        <a href="index.html" class="logo" aria-label="Gå til forsiden"><img src="logo.png" alt=""></a>
+        <form action="#" class="search-cart" role="search">
+            <input type="text" placeholder="Søk..." aria-label="Søk etter produkter">
+            <a href="checkout.html" aria-label="Gå til handlekurv">
+                <a href="checkout.html" class="cart-icon">🛒</a>
+                <span id="cart-count">0</span>
+            </a>
+        </form>
     </header>
 
-    <!-- Produkter -->
+    <!-- Hovedinnhold -->
     <main>
-        <section id="populaere-produkter">
-            <h1>Mine produkter</h1>
-            <p>Utforsk vår utvalg av stilige produkter.</p>
+        <!-- Brødsmulesti -->
+        <nav aria-label="Brødsmulesti">
+            <ul>
+                <li><a href="index.html">hjem</a></li>   
+            </ul>
+        </nav>
+
+        <!-- Produktseksjon -->
+        <section id="product-details" class="product-section">
+
+            <aside class="product-image">
+                <img src="https://picsum.photos/120/120" alt="Fotball Drakter" />
+            </aside>
+        </section>
+
+        <!-- Lignende produkter -->
+        <section id="similar-products" class="product-section">
+
             <div class="product-list">
-                <!-- Produkt 1 -->
                 <article class="product-card">
-                    <img src="https://picsum.photos/200/200?random=1" alt="Trendy Jakke">
-                    <h3>Trendy briller</h3>
-                    <p>Perfekt for synet. Den hjelper for å se bedre.</p>
-                    <p class="price">Pris: 399,-</p>
-                    <button>Kjøp nå</button>
+                    <img src="https://picsum.photos/150" alt="Produkt 1">
+                    <h3>Produkt 1</h3>
+                    <p>Pris: 399 NOK</p>
+                    <a href="product.html" class="btn">Se produkt</a>
+                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
                 </article>
-                <!-- Produkt 2 -->
                 <article class="product-card">
-                    <img src="https://picsum.photos/200/200?random=2" alt="Stilige Joggesko">
-                    <h3>komfortable løpesko</h3>
-                    <p>Komfortable og designet i helhet. Den kommer i flere størrelser.</p>
-                    <p class="price">Pris: 599,-</p>
-                    <button>Kjøp nå</button>
+                    <img src="https://picsum.photos/150" alt="Produkt 2">
+                    <h3>Produkt 2</h3>
+                    <p>Pris: 599 NOK</p>
+                    <a href="product.html" class="btn">Se produkt</a>
+                    <button>Legg i handlekurv</button>
                 </article>
-                <!-- Produkt 3 -->
                 <article class="product-card">
-                    <img src="https://picsum.photos/200/200?random=3" alt="Klassisk Veske">
-                    <h3>Klassisk Veske</h3>
-                    <p>En fin veske for hverdagen.</p>
-                    <p class="price">Pris: 699,-</p>
-                    <button>Kjøp nå</button>
+                    <img src="https://picsum.photos/150" alt="Produkt 3">
+                    <h3>Produkt 3</h3>
+                    <p>Pris: 299 NOK</p>
+                    <a href="product.html" class="btn">Se produkt</a>
+                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
                 </article>
-                <!-- Produkt 4 -->
                 <article class="product-card">
-                    <img src="https://picsum.photos/200/200?random=4" alt="Smartklokke">
-                    <h3>Smartklokke</h3>
-                    <p> vær aktiv og oppdatert med vår nyeste smartklokke.</p>
-                    <p class="price">Pris: 1 299,-</p>
-                    <button>Kjøp nå</button>
+                    <img src="https://picsum.photos/150" alt="Produkt 4">
+                    <h3>Produkt 4</h3>
+                    <p>Pris: 199 NOK</p>
+                    <a href="product.html" class="btn">Se produkt</a>
+                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
                 </article>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Min Nettbutikk. Alle rettigheter reservert.</p>
+    <footer id="contact">
+        <section>
+            <h3>Kontakt oss</h3>
+            <p>E-post: <a href="mailto:libanah@gmail.com">libanah@gmail.com</a></p>
+            <p>Telefon: <a href="tel:+4740159159">+47 40 15 91 59</a></p>
+        </section>
+        <section>
+            <h3>Snarveier</h3>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Kategorier</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Sosiale medier</h3>
+            <ul>
+                <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.pinterest.com" target="_blank">Pinterest</a></li>
+            </ul>
+        </section>
     </footer>
+
+    <script>
+        let cartCount = 0;
+        const cartCountDisplay = document.getElementById('cart-count');
+        const addToCartButtons = document.querySelectorAll('button');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                cartCountDisplay.textContent = cartCount;
+            });
+        });
+    </script>
 </body>
 </html>
-

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fullfør betalingen for dine produkter på vår nettbutikk. Sikker og enkel betalingsprosess.">
+    <title>Betaling - Nettbutikk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Globalt Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="product.html">Produkter</a></li>
+                <li><a href="checkout.html">Betaling</a></li>
+                <li class="logo-center"><a href="index.html" aria-label="Gå til forsiden">Logo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hovedinnhold -->
+    <main>
+        <h1>Betalingsinformasjon</h1>
+
+        <form action="#" method="POST" aria-labelledby="payment-form">
+            <fieldset>
+                <legend id="payment-form">Vennligst fyll ut informasjonen for å fullføre kjøpet:</legend>
+
+                <!-- Fullt navn -->
+                <label for="full-name">Fullt navn</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Skriv inn fullt navn" required aria-required="true">
+
+                <!-- E-post -->
+                <label for="email">E-post</label>
+                <input type="email" id="email" name="email" placeholder="Skriv inn din e-post" required aria-required="true">
+
+                <!-- Adresse -->
+                <label for="address">Adresse</label>
+                <input type="text" id="address" name="address" placeholder="Skriv inn adressen din" required aria-required="true">
+
+                <!-- Kredittkortnummer -->
+                <label for="credit-card">Kredittkortnummer</label>
+                <input type="text" id="credit-card" name="credit-card" placeholder="Skriv inn kredittkortnummer" pattern="\d{16}" required aria-required="true" maxlength="16">
+
+                <!-- Fullfør kjøp knappen -->
+                <button type="submit" class="btn-submit">Fullfør kjøp</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section>
+            <h3>Kontakt oss</h3>
+            <p>E-post: <a href="mailto:libanah@gmail.com">libanah@gmail.com</a></p>
+            <p>Telefon: <a href="tel:+4740159159">+47 40 15 91 59</a></p>
+        </section>
+        <section>
+            <h3>Snarveier</h3>
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="product.html">Produkter</a></li>
+                <li><a href="checkout.html">Betaling</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <!-- Skript for interaktivitet (handlekurv, validasjon, osv.) -->
+    <script>
+        // Eksempel på enkel validasjon av kredittkortnummer (utvid etter behov)
+        const creditCardInput = document.getElementById('credit-card');
+        creditCardInput.addEventListener('input', function() {
+            if (creditCardInput.value.length === 16) {
+                creditCardInput.setCustomValidity('');
+            } else {
+                creditCardInput.setCustomValidity('Kredittkortnummer må være 16 sifre.');
+            }
+        });
+    </script>
+</body>
+</html>
