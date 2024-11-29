@@ -3,99 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fullfør betalingen for dine produkter på vår nettbutikk. Sikker og enkel betalingsprosess.">
-    <title>Betaling - Nettbutikk</title>
+    <title>Kasse - Min Nettbutikk</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Globalt Header -->
+    <!-- Header -->
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="product.html">Produkter</a></li>
-                <li><a href="checkout.html">Betaling</a></li>
-                <li class="logo-center"><a href="index.html" aria-label="Gå til forsiden">Logo</a></li>
+                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Kategorier</a></li>
+                <li><a href="#footer">Kontakt oss</a></li>
             </ul>
         </nav>
+        <a href="index.html" class="logo">Logo</a>
     </header>
 
-    <!-- Hovedinnhold -->
     <main>
-        <h1>Betalingsinformasjon</h1>
+        <h1>Kassen</h1>
 
-        <form action="#" method="POST" aria-labelledby="payment-form">
-            <fieldset>
-                <legend id="payment-form">Vennligst fyll ut informasjonen for å fullføre kjøpet:</legend>
+        <!-- Betalingsinformasjon -->
+        <section id="payment-info">
+            <h2>Betalingsinformasjon</h2>
+            <form id="checkout-form" action="order-confirmation.html" method="post">
+                <div>
+                    <label for="card-number">Kortnummer:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" 
+                           required pattern="\d{16}" title="Kortnummer må være 16 siffer">
+                </div>
 
-                <!-- Fullt navn -->
-                <label for="full-name">Fullt navn</label>
-                <input type="text" id="full-name" name="full-name" placeholder="Skriv inn fullt navn" required aria-required="true">
+                <div>
+                    <label for="expiry-date">Utløpsdato:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/ÅÅ" 
+                           required pattern="\d{2}/\d{2}" title="Bruk formatet MM/ÅÅ">
+                </div>
 
-                <!-- E-post -->
-                <label for="email">E-post</label>
-                <input type="email" id="email" name="email" placeholder="Skriv inn din e-post" required aria-required="true">
+                <div>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" 
+                           required pattern="\d{3}" title="CVV må være 3 siffer">
+                </div>
 
-                <!-- Adresse -->
-                <label for="address">Adresse</label>
-                <input type="text" id="address" name="address" placeholder="Skriv inn adressen din" required aria-required="true">
+                <!-- Leveringsvalg -->
+                <fieldset id="delivery-options">
+                    <legend>Velg leveringstype</legend>
+                    <div>
+                        <label>
+                            <input type="radio" name="delivery" value="standard" checked> Standard levering (3-5 dager) - Gratis
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="delivery" value="express"> Ekspress levering (1-2 dager) - 99 NOK
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" name="delivery" value="pickup"> Hent i butikk - Gratis
+                        </label>
+                    </div>
+                </fieldset>
 
-                <!-- Kredittkortnummer -->
-                <label for="credit-card">Kredittkortnummer</label>
-                <input type="text" id="credit-card" name="credit-card" placeholder="Skriv inn kredittkortnummer" pattern="\d{16}" required aria-required="true" maxlength="16">
-
-                <!-- Utløpsdato -->
-                <label for="expiry-date">Utløpsdato</label>
-                <input type="month" id="expiry-date" name="expiry-date" required aria-required="true">
-
-                <!-- CVC/CVV -->
-                <label for="cvc">CVC/CVV</label>
-                <input type="text" id="cvc" name="cvc" placeholder="123" pattern="\d{3}" required aria-required="true" maxlength="3">
-
-                <!-- Fullfør kjøp knappen -->
-                <button type="submit" class="btn-submit">Fullfør kjøp</button>
-            </fieldset>
-        </form>
+                <!-- Fullfør bestilling -->
+                <button type="submit">Fullfør bestilling</button>
+            </form>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <section>
             <h3>Kontakt oss</h3>
-            <p>E-post: <a href="mailto:libanah@gmail.com">libanah@gmail.com</a></p>
-            <p>Telefon: <a href="tel:+4740159159">+47 40 15 91 59</a></p>
+            <p>E-post: libanah@gmail.com</p>
+            <p>Telefon: 40159159</p>
         </section>
         <section>
             <h3>Snarveier</h3>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="product.html">Produkter</a></li>
-                <li><a href="checkout.html">Betaling</a></li>
+                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Kategorier</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Sosiale medier</h3>
+            <ul>
+                <li><a href="https://www.instagram.com">Instagram</a></li>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                <li><a href="https://www.pinterest.com">Pinterest</a></li>
             </ul>
         </section>
     </footer>
-
-    <!-- Skript for interaktivitet (handlekurv, validasjon, osv.) -->
-    <script>
-        // Validasjon for kredittkortnummer
-        const creditCardInput = document.getElementById('credit-card');
-        creditCardInput.addEventListener('input', function() {
-            if (creditCardInput.value.length === 16) {
-                creditCardInput.setCustomValidity('');
-            } else {
-                creditCardInput.setCustomValidity('Kredittkortnummer må være 16 sifre.');
-            }
-        });
-
-        // Validasjon for CVC/CVV
-        const cvcInput = document.getElementById('cvc');
-        cvcInput.addEventListener('input', function() {
-            if (/^\d{3}$/.test(cvcInput.value)) {
-                cvcInput.setCustomValidity('');
-            } else {
-                cvcInput.setCustomValidity('CVC/CVV må være 3 sifre.');
-            }
-        });
-    </script>
 </body>
 </html>

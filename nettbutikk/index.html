@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="product.html#popular-products">Produkter</a></li>
+                <li><a href="index.html#popular-categories">Produkter</a></li>
                 <li><a href="index.html#popular-categories">Kategorier</a></li>
                 <li><a href="#footer">Kontakt oss</a></li>
             </ul>
@@ -21,17 +21,20 @@
         <form action="#" class="search-cart">
             <input type="text" placeholder="Søk...">
             <a href="checkout.html">
-                <img src="cart-icon.png" alt="Shoppingvogn">
-                <span id="cart-count">0</span>
+
+          <a href="checkout.html" arial label="gå til handelkurv" class="cart-icon">
+              🛒
+            <span id="cart-count">0</span>
             </a>
         </form>
     </header>
 
     <main>
-        <!-- aannerseksjon -->
+        <!-- Bannerseksjon -->
         <section id="banner">
             <h1>Velkommen til vår nettbutikk!</h1>
             <p>Oppdag de beste produktene til de beste prisene.</p>
+            <!-- Endre lenken til å peke til samme side og seksjonen med populære produkter -->
             <a href="#popular-products" class="btn">Utforsk produkter</a>
         </section>
 
@@ -39,24 +42,28 @@
         <section id="popular-products">
             <h2>Våre mest populære produkter</h2>
             <article class="product-card">
+                <a href="product.html">
                 <img src="https://picsum.photos/200/300" alt="Produkt 1">
                 <h3>Produkt 1</h3>
                 <p>Pris: 599 NOK</p>
                 <button onclick="addToCart('Produkt 1')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
+                <a href="product.html">
                 <img src="https://picsum.photos/200/300" alt="Produkt 2">
                 <h3>Produkt 2</h3>
                 <p>Pris: 199 NOK</p>
                 <button onclick="addToCart('Produkt 2')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
+                <a href="product.html"> 
                 <img src="https://picsum.photos/200/300" alt="Produkt 3">
                 <h3>Produkt 3</h3>
                 <p>Pris: 755 NOK</p>
                 <button onclick="addToCart('Produkt 3')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
+                <a href="product.html">
                 <img src="https://picsum.photos/200/300" alt="Produkt 4">
                 <h3>Produkt 4</h3>
                 <p>Pris: 249 NOK</p>
@@ -75,6 +82,7 @@
             </article>
         </section>
 
+        <!-- Footer -->
         <footer id="footer">
             <section>
                 <h3>Kontakt oss</h3>
@@ -99,6 +107,6 @@
                 </ul>
             </section>
         </footer>
-</main>
+    </main>
 </body>
 </html>
