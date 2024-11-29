@@ -19,11 +19,11 @@
                 <li><a href="#contact">Kontakt oss</a></li>
             </ul>
         </nav>
-        <a href="index.html" class="logo" aria-label="Gå til forsiden"><img src="logo.png" alt=""></a>
+        <a href="index.html" class="logo" aria-label="Gå til forsiden"><img src="logo.png" alt="Logo"></a>
         <form action="#" class="search-cart" role="search">
             <input type="text" placeholder="Søk..." aria-label="Søk etter produkter">
             <a href="checkout.html" aria-label="Gå til handlekurv" class="cart-icon">
-                 🛒
+                🛒
                 <span id="cart-count">0</span>
             </a>
         </form>
@@ -34,43 +34,67 @@
 
         <!-- Produktseksjon -->
         <section id="product-details" class="product-section">
+            <div class="product-images">
+                <!-- Stort bilde -->
+                <img src="https://picsum.photos/600/400" alt="Produktnavn" class="main-product-image">
 
-            <aside class="product-image">
-                <img src="https://picsum.photos/120/120" alt="Fotball Drakter" />
-            </aside>
+                <!-- Små bilder -->
+                <div class="thumbnail-images">
+                    <img src="https://picsum.photos/150/100" alt="Produktbilde 1" class="thumbnail">
+                    <img src="https://picsum.photos/150/100" alt="Produktbilde 2" class="thumbnail">
+                    <img src="https://picsum.photos/150/100" alt="Produktbilde 3" class="thumbnail">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <!-- Produktnavn -->
+                <h1>Produktnavn</h1>
+
+                <!-- Merke lenke -->
+                <p>Merke: <a href="merke.html">Merkenavn</a></p>
+
+                <!-- Pris -->
+                <p><strong>Pris: 399 NOK</strong></p>
+
+                <!-- Fargevalg -->
+                <p><strong>Farge:</strong> <span>Svart</span></p>
+
+                <!-- Legg til handlekurv knapp -->
+                <button onclick="addToCart('Produktnavn')">Legg i handlekurv</button>
+            </div>
         </section>
 
         <!-- Lignende produkter -->
         <section id="similar-products" class="product-section">
-
+            <h2>Lignende produkter</h2>
             <div class="product-list">
                 <article class="product-card">
                     <img src="https://picsum.photos/150" alt="Produkt 1">
                     <h3>Brettspill</h3>
                     <p>Pris: 399 NOK</p>
                     <a href="product.html" class="btn">Se produkt</a>
-                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
+                    <button onclick="addToCart('Brettspill')">Legg i handlekurv</button>
                 </article>
                 <article class="product-card">
                     <img src="https://picsum.photos/150" alt="Produkt 2">
-                    <h3>skinnsko</h3>
+                    <h3>Skinnsko</h3>
                     <p>Pris: 599 NOK</p>
                     <a href="product.html" class="btn">Se produkt</a>
-                    <button>Legg i handlekurv</button>
+                    <button onclick="addToCart('Skinnsko')">Legg i handlekurv</button>
                 </article>
                 <article class="product-card">
                     <img src="https://picsum.photos/150" alt="Produkt 3">
                     <h3>Vesker</h3>
-                    <p>pris: 299 NOK</p>
+                    <p>Pris: 299 NOK</p>
                     <a href="product.html" class="btn">Se produkt</a>
-                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
+                    <button onclick="addToCart('Vesker')">Legg i handlekurv</button>
                 </article>
                 <article class="product-card">
                     <img src="https://picsum.photos/150" alt="Produkt 4">
-                    <h3>Jakker </h3>
+                    <h3>Jakker</h3>
                     <p>Pris: 199 NOK</p>
                     <a href="product.html" class="btn">Se produkt</a>
-                    <button onclick="addToCart( produkt )">Legg i handlekurv</button>
+                    <button onclick="addToCart('Jakker')">Legg i handlekurv</button>
                 </article>
             </div>
         </section>
@@ -108,12 +132,13 @@
         const addToCartButtons = document.querySelectorAll('button');
 
         addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (event) => {
+                const productName = event.target.textContent.trim();
                 cartCount++;
                 cartCountDisplay.textContent = cartCount;
+                console.log(productName + ' added to cart!');
             });
         });
     </script>
 </body>
 </html>
-

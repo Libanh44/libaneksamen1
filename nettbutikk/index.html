@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="index.html#popular-categories">Produkter</a></li>
+                <li><a href="index.html#popular-products">Produkter</a></li>
                 <li><a href="index.html#popular-categories">Kategorier</a></li>
                 <li><a href="#footer">Kontakt oss</a></li>
             </ul>
@@ -20,11 +20,8 @@
         <a href="index.html" class="logo">Logo</a>
         <form action="#" class="search-cart">
             <input type="text" placeholder="Søk...">
-            <a href="checkout.html">
-
-          <a href="checkout.html" arial label="gå til handelkurv" class="cart-icon">
-              🛒
-            <span id="cart-count">0</span>
+            <a href="checkout.html" aria-label="Gå til handlekurv" class="cart-icon">🛒
+                <span id="cart-count">0</span>
             </a>
         </form>
     </header>
@@ -43,31 +40,35 @@
             <h2>Våre mest populære produkter</h2>
             <article class="product-card">
                 <a href="product.html">
-                <img src="https://picsum.photos/200/300" alt="Produkt 1">
-                <h3>Produkt 1</h3>
-                <p>Pris: 599 NOK</p>
-                <button onclick="addToCart('Produkt 1')">Legg i handlekurv</button>
+                    <img src="https://picsum.photos/200/300" alt="Produkt 1">
+                    <h3>Produkt 1</h3>
+                    <p>Pris: 599 NOK</p>
+                </a>
+                <button type="button" onclick="addToCart('Produkt 1')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
                 <a href="product.html">
-                <img src="https://picsum.photos/200/300" alt="Produkt 2">
-                <h3>Produkt 2</h3>
-                <p>Pris: 199 NOK</p>
-                <button onclick="addToCart('Produkt 2')">Legg i handlekurv</button>
+                    <img src="https://picsum.photos/200/300" alt="Produkt 2">
+                    <h3>Produkt 2</h3>
+                    <p>Pris: 199 NOK</p>
+                </a>
+                <button type="button" onclick="addToCart('Produkt 2')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
                 <a href="product.html"> 
-                <img src="https://picsum.photos/200/300" alt="Produkt 3">
-                <h3>Produkt 3</h3>
-                <p>Pris: 755 NOK</p>
-                <button onclick="addToCart('Produkt 3')">Legg i handlekurv</button>
+                    <img src="https://picsum.photos/200/300" alt="Produkt 3">
+                    <h3>Produkt 3</h3>
+                    <p>Pris: 755 NOK</p>
+                </a>
+                <button type="button" onclick="addToCart('Produkt 3')">Legg i handlekurv</button>
             </article>
             <article class="product-card">
                 <a href="product.html">
-                <img src="https://picsum.photos/200/300" alt="Produkt 4">
-                <h3>Produkt 4</h3>
-                <p>Pris: 249 NOK</p>
-                <button onclick="addToCart('Produkt 4')">Legg i handlekurv</button>
+                    <img src="https://picsum.photos/200/300" alt="Produkt 4">
+                    <h3>Produkt 4</h3>
+                    <p>Pris: 249 NOK</p>
+                </a>
+                <button type="button" onclick="addToCart('Produkt 4')">Legg i handlekurv</button>
             </article>
         </section>
 
@@ -93,20 +94,28 @@
                 <h3>Snarveier</h3>
                 <ul>
                     <li><a href="index.html">Hjem</a></li>
-                    <li><a href="#populaere-produkter">Produkter</a></li>
-                    <li><a href="#populaere-kategorier">Kategorier</a></li>
+                    <li><a href="#popular-products">Produkter</a></li>
+                    <li><a href="#popular-categories">Kategorier</a></li>
                 </ul>
             </section>
             <section>
                 <h3>Sosiale medier</h3>
                 <ul>
-                    <li><a href="https://www.instagram.com">Instagram</a></li>
-                    <li><a href="https://www.facebook.com">Facebook</a></li>
-                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-                    <li><a href="https://www.pinterest.com">Pinterest</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
                 </ul>
             </section>
         </footer>
     </main>
+
+    <script>
+        // Placeholder function to simulate adding to the cart
+        function addToCart(productName) {
+            console.log(productName + ' added to cart!');
+            // Additional functionality can be added here to update cart count
+        }
+    </script>
 </body>
 </html>
