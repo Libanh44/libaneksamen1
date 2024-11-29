@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- Globalt Header -->
+  
     <header>
         <nav>
             <ul>
@@ -29,10 +29,9 @@
         </form>
     </header>
 
-    <!-- Hovedinnhold -->
     <main> 
 
-        <!-- Produktseksjon -->
+        
         <section id="product-details" class="product-section">
             <div class="product-images">
                 <!-- Stort bilde -->
@@ -47,24 +46,21 @@
             </div>
 
             <div class="product-info">
-                <!-- Produktnavn -->
-                <h1>Produktnavn</h1>
+                
+                <h1>Masker</h1>
 
-                <!-- Merke lenke -->
-                <p>Merke: <a href="merke.html">Merkenavn</a></p>
-
-                <!-- Pris -->
+                
                 <p><strong>Pris: 399 NOK</strong></p>
 
-                <!-- Fargevalg -->
+                
                 <p><strong>Farge:</strong> <span>Svart</span></p>
 
-                <!-- Legg til handlekurv knapp -->
+                
                 <button onclick="addToCart('Produktnavn')">Legg i handlekurv</button>
             </div>
         </section>
 
-        <!-- Lignende produkter -->
+        
         <section id="similar-products" class="product-section">
             <h2>Lignende produkter</h2>
             <div class="product-list">
@@ -100,7 +96,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer id="contact">
         <section>
             <h3>Kontakt oss</h3>
@@ -132,12 +127,12 @@
         const addToCartButtons = document.querySelectorAll('button');
 
         addToCartButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
+            button.addEventListener('click',(event) => {
                 const productName = event.target.textContent.trim();
                 cartCount++;
                 cartCountDisplay.textContent = cartCount;
                 console.log(productName + ' added to cart!');
-            });
+             });
         });
     </script>
 </body>

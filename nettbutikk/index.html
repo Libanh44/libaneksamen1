@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Globalt Header -->
-    <header>
+  <header>
         <nav>
             <ul>
                 <li><a href="index.html">Hjem</a></li>
@@ -24,18 +23,15 @@
                 <span id="cart-count">0</span>
             </a>
         </form>
-    </header>
-
+    </header> 
     <main>
-        <!-- Bannerseksjon -->
         <section id="banner">
             <h1>Velkommen til vår nettbutikk!</h1>
             <p>Oppdag de beste produktene til de beste prisene.</p>
-            <!-- Endre lenken til å peke til samme side og seksjonen med populære produkter -->
+            <!-- forandrer lenken til å peke fram til samme side og seksjonen med populære produkter -->
             <a href="#popular-products" class="btn">Utforsk produkter</a>
         </section>
 
-        <!-- Våre mest populære produkter -->
         <section id="popular-products">
             <h2>Våre mest populære produkter</h2>
             <article class="product-card">
@@ -71,8 +67,6 @@
                 <button type="button" onclick="addToCart('Produkt 4')">Legg i handlekurv</button>
             </article>
         </section>
-
-        <!-- Våre mest populære kategorier -->
         <section id="popular-categories">
             <h2>Våre mest populære kategorier</h2>
             <article class="category-card">
@@ -82,8 +76,27 @@
                 <h3>Kategori 2</h3>
             </article>
         </section>
+   
+        <section id="reviews">
+            <h2>Hva våre kunder sier</h2>
+            <div class="review-card">
+                <h3>Hans Ludvig</h3>
+                <p>Fantastisk produkt! Kjøpte en av disse, og jeg er veldig fornøyd med kvaliteten og leveringen. Anbefales på det sterkeste!</p>
+            </div>
+            <div class="review-card">
+                <h3>Lars hermansen</h3>
+                <p>Veldig bra service og raske leveringstider. Produktet er akkurat som forventet, men prisen kunne vært litt lavere.</p>
+            </div>
+            <div class="review-card">
+                <h3>Amalie Fjell</h3>
+                <p>Utmerket kundeservice! Jeg fikk hjelp med en gang, og produktet lever opp til forventningene. Vil definitivt handle her igjen.</p>
+            </div>
+            <div class="review-card">
+                <h3>Vetle finsen</h3>
+                <p>Veldig fornøyd med kjøpet mitt, men produktet kunne vært litt mer robust. Likevel, veldig bra for prisen!</p>
+            </div>
+        </section>
 
-        <!-- Footer -->
         <footer id="footer">
             <section>
                 <h3>Kontakt oss</h3>
@@ -109,13 +122,6 @@
             </section>
         </footer>
     </main>
-
-    <script>
-        // Placeholder function to simulate adding to the cart
-        function addToCart(productName) {
-            console.log(productName + ' added to cart!');
-            // Additional functionality can be added here to update cart count
-        }
-    </script>
+ 
 </body>
 </html>

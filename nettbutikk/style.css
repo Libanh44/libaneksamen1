@@ -212,29 +212,6 @@ header .search-cart img {
     margin-bottom: 15px;
 }
 
-/* Produktbilde - standard størrelse (25% bredde) */
-.product-image img {
-    width: 25%; /* Sett bildet til å ta 25% av bredden */
-    height: auto;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-/* Responsiv design for små skjermer */
-@media (max-width: 768px) {
-    .product-image img {
-        width: 100%; /* På mobil, sett bildet til 100% av bredden */
-    }
-
-    .product-card {
-        width: 45%; /* Øk bredden på produktkortene på mobil */
-    }
-
-    header .search-cart input {
-        width: 150px; /* Reduserer bredden på søkeboksen på mobil */
-    }
-}
-
 /* Kategorier Seksjon */
 #popular-categories {
     padding: 40px 20px;
@@ -266,33 +243,69 @@ header .search-cart img {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.category-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
 .category-card h3 {
     font-size: 20px;
     margin-top: 10px;
     color: #333;
 }
 
-/* Kontakt Seksjon */
-#contact {
+/* Anmeldelser Seksjon */
+#reviews {
     padding: 40px 20px;
     background-color: #fff;
     text-align: center;
 }
 
-#contact h2 {
+#reviews h2 {
     font-size: 32px;
     margin-bottom: 20px;
     color: #333;
 }
 
-#contact p {
-    font-size: 18px;
+.review-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.review-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 16px;
     color: #666;
+    margin-bottom: 10px;
+}
+
+/* Stjerner */
+.review-card p:nth-of-type(1) {
+    font-size: 18px;
+    color: #FF6F61;
+    margin-bottom: 15px;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .product-card,
+    .category-card {
+        width: 45%; /* Øk bredden på produkt- og kategorikortene på mobil */
+    }
+
+    .review-card {
+        width: 90%;
+    }
 }
